@@ -43,7 +43,7 @@ export default function App() {
   }, []);
 
   function getTasks() {
-    fetch("http://192.168.1.5:3001")
+    fetch("http://10.254.1.210:3001")
       .then((response) => {
         return response.json();
       })
@@ -62,7 +62,7 @@ export default function App() {
   function createTask(newTask) {
     let title = newTask;
 
-    fetch("http://192.168.1.5:3001/tasks", {
+    fetch("http://10.254.1.210:3001/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export default function App() {
   function deleteTask(taskId) {
     let id = taskId;
 
-    fetch(`http://192.168.1.5:3001/tasks/${id}`, {
+    fetch(`http://10.254.1.210:3001/tasks/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
